@@ -26,12 +26,6 @@ function getClient(): Anthropic {
   return cachedClient;
 }
 
-interface ToolUseBlockLike {
-  type: "tool_use";
-  name: string;
-  input: unknown;
-}
-
 interface StructuredCallOptions<T> {
   /** System prompt describing the agent's role and how it should decide. */
   system: string;
@@ -89,8 +83,7 @@ export async function callClaudeStructured<T>(opts: StructuredCallOptions<T>): P
       });
 
       const toolUseBlock = response.content.find(
-        (block): block is ToolUseBlockLike =>
-          (block as { type?: string }).type === "tool_use"
+        (block): block is Anthropic.ToolUseBlock => block.type === "tool_use"
       );
 
       if (!toolUseBlock) {
