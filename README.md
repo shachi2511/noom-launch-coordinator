@@ -3,7 +3,7 @@
 A concept prototype built for a Noom Agentic Engineer (New Grad) application. **Not an
 official Noom product** — see the disclaimer at the bottom of every page.
 
-## The problem, in plain English
+## The problem
 
 Noom's production AI feature, **Welli**, is a single agent grounded in one shared
 knowledge base — coaching, support, and content teams all curate the same source of
