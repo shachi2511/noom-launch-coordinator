@@ -82,7 +82,6 @@ export async function callClaudeStructured<T>(opts: StructuredCallOptions<T>): P
           {
             name: toolName,
             description: toolDescription,
-            // eslint-disable-next-line
             input_schema: inputSchema as any,
           },
         ],
